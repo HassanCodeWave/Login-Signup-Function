@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            border-radius: 5px;
+        }
+
+        .form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p#signup-message {
+            text-align: center;
+            margin-top: 10px;
+        }
+          </style>
+</head>
+<body>
+    <div class="container">
+    <div id="signup-form" class="form">
+        <h1>Signup</h1>
+        <input type="text" id="signup-name" placeholder="Name">
+        <input type="email" id="signup-email" placeholder="Email">
+        <input type="password" id="signup-password" placeholder="Password">
+        <button  id="signup" type="submit" onclick="signup()" > Signup </button>
+        <p id="signup-message"></p>
+        <!-- <p> <a href="login.html">Login Now</a></p> -->
+      </div>
+    </div></div>
+</body>
+<script>
+ 
+
+    // Signup function
+function signup() {
+  // Get input values
+  var name = document.getElementById("signup-name").value;
+  var email = document.getElementById("signup-email").value;
+  var password = document.getElementById("signup-password").value;
+
+  // Check if name, email, and password are not empty
+  if (name && email && password) {
+    // Save user information to local storage
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+    
+    // Clear input fields
+    document.getElementById("signup-name").value = "";
+    document.getElementById("signup-email").value = "";
+    document.getElementById("signup-password").value = "";
+
+    // Display success message
+    document.getElementById("signup-message").textContent = "Signup successful. You can now login.";
+  } else {
+    // Display error message
+    document.getElementById("signup-message").textContent = "Please fill in all the fields.";
+  }
+}
+
+</script>
+</html>
