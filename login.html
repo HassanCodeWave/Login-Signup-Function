@@ -5,76 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <style>
-         body {
-            font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
-            margin: 0;
-            padding: 0;
-        }
-
-        .login-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            border-radius: 5px;
-        }
-
-
-        .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 300px;
-           
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-    
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: blue;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        p#login-message {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="./login.css">
 </head>
 <body>
   <div class="login-container">
@@ -87,30 +18,5 @@
           <p id="login-message"></p>
         </div></div>
 </body>
-<script>
-  
-    // Login function
-function login() {
-  // Get input values
-  var email = document.getElementById("login-email").value;
-  var password = document.getElementById("login-password").value;
-
-  // Get saved user information from local storage
-  var savedEmail = localStorage.getItem("email");
-  var savedPassword = localStorage.getItem("password");
-
-  // Check if email and password match the saved information
-  if (email === savedEmail && password === savedPassword) {
-    // Clear input fields
-    document.getElementById("login-email").value = "";
-    document.getElementById("login-password").value = "";
-
-    // Display success message
-    document.getElementById("login-message").textContent = "Successfully logged in!";
-  } else {
-    // Display error message
-    document.getElementById("login-message").textContent = "Wrong information. Please try again.";
-  }
-}
-</script>
+<script src="./login.js"></script>
 </html>
